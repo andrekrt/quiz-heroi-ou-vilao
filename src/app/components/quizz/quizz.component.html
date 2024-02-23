@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="logo">
+    <img src="assets/img/logo.png" alt="">
+    <h3>{{title}}</h3>
+  </div>
+  <div class="quiz" *ngIf="!finalizado">
+    <h3>{{questaoSelecionada.question}}</h3>
+  </div>
+  <div class="opcoes" *ngIf="!finalizado">
+    <button class="opcao" *ngFor="let opcao of questaoSelecionada.options" (click)="opcaoClicada(opcao.alias)">{{opcao.name}}</button>
+  </div>
+  <div class="resultados" *ngIf="finalizado">
+    <h1>O seu resultado é:</h1>
+    <p>{{respostaSelecionada}}</p>
+  </div>
+</div>
